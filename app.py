@@ -91,7 +91,7 @@ def uploader():
     
         
         image_name = os.listdir(app.config['UPLOAD_PATH'])
-        return render_template('newview.html', filename=image_name[0])
+   return render_template('newview.html', filename=image_name[0])
                 		
 @app.route('/uploads/<filename>')
 def upload(filename):
