@@ -68,7 +68,7 @@ def home():
    return render_template('index.html')
 	
 @app.route('/uploader', methods = ['GET', 'POST'])
-def upload_file():
+def uploader():
    if request.method == 'POST':
         f = request.files['file']
         f.save(secure_filename(f.filename))
