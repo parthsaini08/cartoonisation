@@ -59,6 +59,8 @@ def cartoonize(load_folder, save_folder, model_path):
             cv2.imwrite(save_path, output)
         except:
             print('cartoonize {} failed'.format(load_path))
+    return 
+
 app = Flask(__name__)
 app.config['UPLOAD_PATH']='./cartoonized_images'
 @app.route('/')
