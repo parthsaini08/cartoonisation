@@ -33,7 +33,7 @@ def cartoonize(load_folder, save_folder, model_path):
     input_photo = tf.placeholder(tf.float32, [1, None, None, 3])
     network_out = network.unet_generator(input_photo)
     final_out = guided_filter.guided_filter(input_photo, network_out, r=1, eps=5e-3)
-    tf.reset_default_graph()
+  
     all_vars = tf.trainable_variables()
     gene_vars = [var for var in all_vars if 'generator' in var.name]
     saver = tf.train.Saver(var_list=gene_vars)
